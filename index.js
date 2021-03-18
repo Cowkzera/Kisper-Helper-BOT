@@ -4,17 +4,15 @@ const config = require("./config.json");
 const counter = require('./memberCounter.js')
 
 
-client.on('message', message => {
+client.on('message',async message => {
 
 if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
 
     let owner = "400698555893022720"
 
-    const owner2 = client.users.cache.get(owner).username
-
     const embed = new Discord.MessageEmbed()
         .setTitle(`Informações do bot`)
-        .setDescription(`\`Informações Gerais\`\n> O Kisper Helper foi feito para ajuda o meu Criador em seus servidores oficiais.\n\n\`Dev:\`\n> ${owner2}\n\n\`Prefix:\`\n> ++\n\n`)
+        .setDescription(`\`Informações Gerais\`\n> O Kisper Helper foi feito para ajuda o meu Criador em seus servidores oficiais.\n\n\`Dev:\`\n> <@400698555893022720>\n\n\`Prefix:\`\n> ++\n\n`)
         .setFooter("© Todos os Direitos Reservados!")
         .setTimestamp()
         .setColor('RANDOM')
@@ -22,7 +20,15 @@ if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
 }
   
      if (message.author.bot) return;
-     if (message.channel.type == 'dm') return;
+     if (message.channel.type == 'dm') {
+           const embed = new Discord.MessageEmbed()
+        .setTitle(`Informações do bot`)
+        .setDescription(`\`Informações Gerais\`\n> O Kisper Helper foi feito para ajuda o meu Criador em seus servidores oficiais.\n\n\`Dev:\`\n> <@400698555893022720>\n\n\`Prefix:\`\n> ++\n\n`)
+        .setFooter("© Todos os Direitos Reservados!")
+        .setTimestamp()
+        .setColor('RANDOM')
+        message.author.send(embed)
+     };
      if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
      if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
 
