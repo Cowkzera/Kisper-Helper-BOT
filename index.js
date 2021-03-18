@@ -11,7 +11,7 @@ if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
     let owner = "400698555893022720"
 
     const owner2 = client.users.cache.get(owner).username
-    
+
     const embed = new Discord.MessageEmbed()
         .setTitle(`Informações do bot`)
         .setDescription(`\`Informações Gerais\`\n> O Kisper Helper foi feito para ajuda o meu Criador em seus servidores oficiais.\n\n\`Dev:\`\n> ${owner2}\n\n\`Prefix:\`\n> ++\n\n`)
@@ -100,13 +100,10 @@ var footer = [
 client.on("ready",async () => {
   counter(client)
 
-let activities = [
-  `👑 | Bot de suporte para servidores oficiais do Kisper/Cowk.`
-],
-i = 0;
-setInterval(() => client.user.setActivity(`${activities[i++ %activities.length]}`, {
-  type: "WATCHING"
-}), 5000);
+  client.user.setActivity(`👑 | Bot de suporte para servidores oficiais do Kisper/Cowk`, {
+  type: "PLAYING"
+});
+
 console.log("Estou online")
 });
 
