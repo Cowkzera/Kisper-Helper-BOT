@@ -1,4 +1,4 @@
-<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Kisper" src="https://i.imgur.com/TdQrpwH.png">  
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Kisper" src="https://i.imgur.com/iRfkYy5.png">  
 
 ## Kisper Helper
 
